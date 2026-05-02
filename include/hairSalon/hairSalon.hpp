@@ -2,18 +2,13 @@
 #include <vector>
 #include "hairDresser/hairDresser.hpp"
 
-extern float probability;
-extern int maxWorkers;
-extern int workDay;
-extern int seats;
-extern std::string names[20];
-extern std::string surnames[20];
-
 class HairSalon{
 
     private:
-    int freeSeats;
+    int seats;
+    int maxSeats;
     bool newCustomer;
+    int maxWorkers;
     std::vector<HairDresser> workers;
     int Qloss;
     public:

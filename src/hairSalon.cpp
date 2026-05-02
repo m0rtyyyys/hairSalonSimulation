@@ -14,7 +14,7 @@ std::string surnames[20] = {"Smith", "Johnson", "Williams", "Brown", "Jones",
     "Thomas", "Taylor", "Moore", "Jackson", "White"};
 
 //Конструктор класса со случайной генерацией имени
-HairSalon::HairSalon(int seats, int maxWorkers): freeSeats(seats), newCustomer(false), Qloss(0)
+HairSalon::HairSalon(int seats, int mWorkers): seats(seats), maxWorkers(mWorkers), newCustomer(false), Qloss(0), maxSeats(seats)
 { 
     std::random_device rd; 
     std::mt19937 gen(rd()); 
@@ -27,12 +27,12 @@ HairSalon::HairSalon(int seats, int maxWorkers): freeSeats(seats), newCustomer(f
 
 int HairSalon::get_freeSeats()
 {
-    return freeSeats;
+    return seats;
 }
 
-void HairSalon::set_freeSeats(int seats)
+void HairSalon::set_freeSeats(int s)
 {
-    freeSeats = seats;
+    seats = s;
 }
 
 bool HairSalon::get_newCustomer()
@@ -95,9 +95,9 @@ void HairSalon::event_newCustomer()
             return;
         }
     }
-    if(freeSeats > 0)
+    if(seats > 0)
     {
-        freeSeats--;
+        seats--;
         newCustomer = false;
     }
     else
@@ -110,7 +110,7 @@ void HairSalon::event_newCustomer()
 //Освобождение места в очереди
 void HairSalon::event_seat()
 {
-    if(freeSeats == seats)
+    if(seats == maxSeats)
     {
         return;
     }
@@ -119,7 +119,7 @@ void HairSalon::event_seat()
         if(workers[i].get_isTaken() == false)
         {
             workers[i].set_isTaken(true);
-            freeSeats++;
+            seats++;
             return;
         }
     }

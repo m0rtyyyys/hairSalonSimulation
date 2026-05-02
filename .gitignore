@@ -63,4 +63,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# exp files
+main_milti.cpp
+
 # End of https://www.toptal.com/developers/gitignore/api/cmake,windows,linux

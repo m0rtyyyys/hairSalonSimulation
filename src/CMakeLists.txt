@@ -20,6 +20,7 @@ target_include_directories(saveCSV PUBLIC
 
 # Создаем основной исполняемый файл
 add_executable(hairSalonSimulation main.cpp)
+#add_executable(hairSalonSimulation main_multiply.cpp)
 
 # Линкуем библиотеку к исполняемому файлу
 target_link_libraries(hairSalon PRIVATE hairDresser)
