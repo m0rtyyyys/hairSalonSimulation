@@ -26,12 +26,12 @@ int main() {
 
     std::cout << "Enter num of iterations: ";
     std::cin >> totalIterations;
-    for(maxWorkers = 1;maxWorkers <= 5; maxWorkers++)
-    {   
-        for(seats = 0; seats <= 10; seats++)
-        {
-            for(probability = 0.1000000; probability <= 0.55; probability = probability + 0.1000000)
-            {
+    //for(maxWorkers = 1;maxWorkers <= 5; maxWorkers++)
+    // {   
+    //     for(seats = 0; seats <= 10; seats++)
+    //     {
+    //         for(probability = 0.1000000; probability <= 0.55; probability = probability + 0.1000000)
+    //         {
                 std::bernoulli_distribution chance(probability);
                 rewriteCSV("report.csv", maxWorkers, seats, probability);
     // Запуск заданного числа итераций
@@ -93,8 +93,8 @@ int main() {
 
         saveCSV("report.csv", i, totalQ, BashkaSaloon.get_QLoss(), Ro/maxWorkers, totalLine/workDay);
            }
-       }
-    }
-    }
+    //    }
+    // }
+    // }
     return 0;
 }

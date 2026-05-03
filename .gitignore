@@ -64,6 +64,6 @@ $RECYCLE.BIN/
 *.lnk
 
 # exp files
-main_milti.cpp
+main_miltiply.cpp
 
 # End of https://www.toptal.com/developers/gitignore/api/cmake,windows,linux
